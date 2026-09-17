@@ -1,0 +1,67 @@
+{
+    "topic": "Ginzburg–Landau Theory",
+
+    "problems": [
+
+        {
+            "id": "GL-001",
+            "title": "The Superconducting Order Parameter",
+            "difficulty": 100
+        },
+
+        {
+            "id": "GL-002",
+            "title": "Constructing the GL Free Energy",
+            "difficulty": 200
+        },
+
+        {
+            "id": "GL-003",
+            "title": "Finding the Equilibrium Order Parameter",
+            "difficulty": 300
+        },
+
+        {
+            "id": "GL-004",
+            "title": "The Coherence Length",
+            "difficulty": 400
+        },
+
+        {
+            "id": "GL-005",
+            "title": "The London Penetration Depth from GL Theory",
+            "difficulty": 500
+        },
+
+        {
+            "id": "GL-006",
+            "title": "Calculating the GL Parameter",
+            "difficulty": 600
+        },
+
+        {
+            "id": "GL-007",
+            "title": "Critical Fields from GL Theory",
+            "difficulty": 700
+        },
+
+        {
+            "id": "GL-008",
+            "title": "The Energy of a Superconducting Vortex",
+            "difficulty": 800
+        },
+
+        {
+            "id": "GL-009",
+            "title": "The Abrikosov Vortex Lattice",
+            "difficulty": 900
+        },
+
+        {
+            "id": "GL-010",
+            "title": "Ginzburg–Landau Challenge",
+            "difficulty": 1000
+        }
+
+    ]
+}

@@ -1,0 +1,155 @@
+/* =========================================================
+   PHY MACHINE
+   Custom CSS
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   General
+   --------------------------------------------------------- */
+
+body {
+    color: #212529;
+}
+
+
+/* ---------------------------------------------------------
+   Navbar
+   --------------------------------------------------------- */
+
+.navbar-brand {
+    letter-spacing: -0.4px;
+}
+
+
+/* ---------------------------------------------------------
+   Topic
+   --------------------------------------------------------- */
+
+.topic-section {
+    margin-bottom: 3rem;
+}
+
+
+.topic-title {
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.04em;
+
+    margin-bottom: 0.5rem;
+}
+
+
+/* ---------------------------------------------------------
+   Problem row
+   --------------------------------------------------------- */
+
+.problem-row {
+
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+
+    color: #212529;
+
+    padding: 0.65rem 0.75rem;
+
+    border-bottom: 1px solid #e9ecef;
+
+    transition: background-color 0.1s ease;
+
+}
+
+
+.problem-row:hover {
+
+    background-color: #f8f9fa;
+
+}
+
+
+.problem-icon {
+
+    width: 25px;
+
+    color: #adb5bd;
+
+}
+
+
+.problem-name {
+
+    flex: 1;
+
+}
+
+
+.problem-difficulty {
+
+    width: 45px;
+
+    text-align: right;
+
+    color: #6c757d;
+
+    font-size: 0.875rem;
+
+}
+
+/* =========================================================
+   PROBLEM PAGE
+   ========================================================= */
+
+.problem-page {
+    max-width: 850px;
+}
+
+
+/* Problem title */
+
+.problem-page-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+
+/* Metadata */
+
+.problem-meta {
+    font-size: 0.9rem;
+}
+
+
+/* Problem statement */
+
+.problem-statement {
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+
+    margin-top: 2rem;
+}
+
+
+/* Answer box */
+
+.answer-box {
+
+    max-width: 400px;
+
+}
+
+
+/* Result */
+
+.result-box {
+
+    max-width: 600px;
+
+}

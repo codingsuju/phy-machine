@@ -1,0 +1,67 @@
+{
+    "topic": "BCS Theory",
+
+    "problems": [
+
+        {
+            "id": "BCS-001",
+            "title": "Why Do Electrons Form Cooper Pairs?",
+            "difficulty": 100
+        },
+
+        {
+            "id": "BCS-002",
+            "title": "The Effective Electron–Electron Attraction",
+            "difficulty": 200
+        },
+
+        {
+            "id": "BCS-003",
+            "title": "The Superconducting Energy Gap",
+            "difficulty": 300
+        },
+
+        {
+            "id": "BCS-004",
+            "title": "The Density of States Near the Gap",
+            "difficulty": 400
+        },
+
+        {
+            "id": "BCS-005",
+            "title": "Constructing the BCS Ground State",
+            "difficulty": 500
+        },
+
+        {
+            "id": "BCS-006",
+            "title": "The BCS Gap Equation",
+            "difficulty": 600
+        },
+
+        {
+            "id": "BCS-007",
+            "title": "Calculating the Critical Temperature",
+            "difficulty": 700
+        },
+
+        {
+            "id": "BCS-008",
+            "title": "The BCS Coherence Length",
+            "difficulty": 800
+        },
+
+        {
+            "id": "BCS-009",
+            "title": "The Isotope Effect",
+            "difficulty": 900
+        },
+
+        {
+            "id": "BCS-010",
+            "title": "BCS Theory Challenge",
+            "difficulty": 1000
+        }
+
+    ]
+}
