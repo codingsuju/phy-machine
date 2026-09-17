@@ -23,6 +23,25 @@
 
             "solution": "We require $$B(x)=0.01B_0.$$ Using $$B(x)=B_0e^{-x/\\lambda_L},$$ we obtain $$0.01=e^{-x/\\lambda_L}.$$ Taking the natural logarithm, $$\\ln(0.01)=-\\frac{x}{\\lambda_L}.$$ Therefore, $$x=-\\lambda_L\\ln(0.01).$$ Substituting $\\lambda_L=50\\,\\mathrm{nm}$, $$x=-50\\ln(0.01)\\approx 50\\times4.605\\approx230\\,\\mathrm{nm}.$$ Hence the correct answer is $230\\,\\mathrm{nm}$."
         }
+        ,
+
+        {
+            "id": "SC-BAS-002",
+            "title": "Magnetic Field in a Finite Superconducting Film",
+            "difficulty": 500,
+            "type": "multiple_choice",
+            "statement": "A superconducting film occupies the region $0\\lt x\\lt d$, with $d=100\\,\\mathrm{nm}$. The magnetic field inside the film is along the $z$-direction and satisfies the London equation $\\frac{d^2B}{dx^2}=\\frac{B}{\\lambda_L^2}$, where $\\lambda_L=50\\,\\mathrm{nm}$. The magnetic fields at the two surfaces are $B(0)=20\\,\\mathrm{mT}$ and $B(d)=5\\,\\mathrm{mT}$. What is the magnitude of the magnetic field at $x=50\\,\\mathrm{nm}$?",
+            "options": [
+                "$7.5\\,\\mathrm{mT}$",
+                "$8.1\\,\\mathrm{mT}$",
+                "$10.0\\,\\mathrm{mT}$",
+                "$12.5\\,\\mathrm{mT}$"
+            ],
+
+            "answer": 1,
+
+            "solution": "The general solution of the London equation is $$B(x)=A\\cosh\\left(\\frac{x}{\\lambda_L}\\right)+C\\sinh\\left(\\frac{x}{\\lambda_L}\\right).$$ From the boundary condition at $x=0$, $$B(0)=A=20\\,\\mathrm{mT}.$$ Therefore, $$B(x)=20\\cosh\\left(\\frac{x}{50}\\right)+C\\sinh\\left(\\frac{x}{50}\\right),$$ where lengths are in nm. Using $B(100)=5\\,\\mathrm{mT}$, $$5=20\\cosh(2)+C\\sinh(2).$$ Hence $$C=\\frac{5-20\\cosh(2)}{\\sinh(2)}\\approx-19.37\\,\\mathrm{mT}.$$ At $x=50\\,\\mathrm{nm}$, $$B(50)=20\\cosh(1)-19.37\\sinh(1).$$ Evaluating, $$B(50)\\approx8.10\\,\\mathrm{mT}.$$ Therefore the correct answer is $8.1\\,\\mathrm{mT}$."
+        }
 
     ]
 }
