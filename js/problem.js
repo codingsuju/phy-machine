@@ -121,6 +121,9 @@ async function loadProblem() {
 
 function renderProblem(problem) {
 
+    const options =
+        buildOptions(problem);
+
     problemPage.innerHTML = `
 
         <div class="problem-page">
@@ -168,7 +171,7 @@ function renderProblem(problem) {
 
             <div class="problem-statement">
 
-                ${problem.statement || "The problem statement will be added soon."}
+                ${problem.statement}
 
             </div>
 
@@ -179,28 +182,24 @@ function renderProblem(problem) {
 
                 <h5 class="fw-semibold">
 
-                    Answer
+                    Choose an answer
 
                 </h5>
 
 
-                <div class="input-group answer-box mt-3">
+                <div class="answer-options mt-3">
 
-                    <input
-                        type="number"
-                        id="answerInput"
-                        class="form-control"
-                        placeholder="Enter your answer"
-                        ${problem.answer === undefined ? "disabled" : ""}
-                    >
+                    ${options.map((option, index) => `
 
-                    <button
-                        class="btn btn-dark"
-                        id="submitButton"
-                        ${problem.answer === undefined ? "disabled" : ""}
-                    >
-                        Submit
-                    </button>
+                        <button
+                            type="button"
+                            class="btn btn-outline-dark answer-option"
+                            data-answer="${option.value}"
+                        >
+                            ${option.label}
+                        </button>
+
+                    `).join("")}
 
                 </div>
 
@@ -221,11 +220,106 @@ function renderProblem(problem) {
 
 
     document
-        .getElementById("submitButton")
-        .addEventListener(
-            "click",
-            () => checkAnswer(problem)
+        .querySelectorAll(".answer-option")
+        .forEach(button => {
+
+            button.addEventListener(
+                "click",
+                () => checkAnswer(
+                    problem,
+                    Number(button.dataset.answer),
+                    button
+                )
+            );
+
+        });
+
+    typesetProblem();
+
+}
+
+
+
+/* =========================================================
+   LATEX RENDERING
+   ========================================================= */
+
+function typesetProblem() {
+
+    if (window.MathJax && window.MathJax.typesetPromise) {
+
+        window.MathJax.typesetPromise([
+            problemPage
+        ]).catch(error => console.error(error));
+
+    } else if (window.MathJax && window.MathJax.startup) {
+
+        window.MathJax.startup.promise
+            .then(() => typesetProblem())
+            .catch(error => console.error(error));
+
+    }
+
+}
+
+
+
+/* =========================================================
+   ANSWER OPTIONS
+   ========================================================= */
+
+function buildOptions(problem) {
+
+    if (Array.isArray(problem.options)) {
+
+        return problem.options.map((label, index) => ({
+            label,
+            value: index
+        }));
+
+    }
+
+    const step =
+        Math.max(
+            Math.abs(problem.answer) * 0.2,
+            (problem.tolerance || 0) * 5,
+            0.1
         );
+
+    const values = [
+        problem.answer,
+        problem.answer + step,
+        problem.answer - step,
+        problem.answer + (step * 2)
+    ];
+
+    const offset =
+        problem.id.split("").reduce(
+            (total, character) => total + character.charCodeAt(0),
+            0
+        ) % values.length;
+
+    return values
+        .map((value, index) => ({
+            value: Number(value.toPrecision(6)),
+            index
+        }))
+        .sort((first, second) =>
+            ((first.index + offset) % values.length)
+            - ((second.index + offset) % values.length)
+        )
+        .map(option => ({
+            label: formatAnswer(option.value, problem.unit),
+            value: option.value
+        }));
+
+}
+
+
+
+function formatAnswer(value, unit) {
+
+    return `${value}${unit ? ` ${unit}` : ""}`;
 
 }
 
@@ -235,67 +329,58 @@ function renderProblem(problem) {
    CHECK ANSWER
    ========================================================= */
 
-function checkAnswer(problem) {
-
-    const input =
-        document.getElementById("answerInput");
+function checkAnswer(problem, selectedAnswer, selectedButton) {
 
     const result =
         document.getElementById("result");
 
-
-    const userAnswer =
-        parseFloat(input.value);
-
-
-    if (Number.isNaN(userAnswer)) {
-
-        result.innerHTML = `
-
-            <div class="alert alert-warning">
-
-                Please enter an answer.
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    if (problem.answer === undefined) {
-
-        result.innerHTML = `
-
-            <div class="alert alert-secondary">
-
-                Answer checking will be enabled when the problem is added.
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
     const isCorrect =
-        Math.abs(userAnswer - problem.answer) <= (problem.tolerance || 0);
+        Array.isArray(problem.options)
+            ? selectedAnswer === problem.answer
+            : Math.abs(selectedAnswer - problem.answer) <= (problem.tolerance || 0);
+
+    selectedButton.classList.remove("btn-outline-dark");
+    selectedButton.classList.add(
+        isCorrect ? "btn-success" : "btn-danger"
+    );
 
     result.innerHTML = `
 
         <div class="alert ${isCorrect ? "alert-success" : "alert-danger"}">
 
-            ${isCorrect ? "Correct." : "Not quite. Try again."}
+            ${isCorrect ? "Correct." : "Wrong answer. Try again."}
 
-            ${isCorrect && problem.unit ? `<strong>Answer: ${problem.answer} ${problem.unit}</strong>` : ""}
+            ${isCorrect ? `<strong>Answer: ${getCorrectAnswerLabel(problem)}</strong>` : ""}
+
+            ${isCorrect && problem.solution ? `<p class="mb-0 mt-2">${problem.solution}</p>` : ""}
 
         </div>
 
     `;
+
+    typesetProblem();
+
+    if (isCorrect) {
+
+        document
+            .querySelectorAll(".answer-option")
+            .forEach(button => button.disabled = true);
+
+    }
+
+}
+
+
+
+function getCorrectAnswerLabel(problem) {
+
+    if (Array.isArray(problem.options)) {
+
+        return problem.options[problem.answer];
+
+    }
+
+    return formatAnswer(problem.answer, problem.unit);
 
 }
 

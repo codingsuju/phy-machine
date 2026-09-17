@@ -1,3 +1,4 @@
+
 {
     "topic": "Basics of Superconductivity",
 
@@ -5,77 +6,22 @@
 
         {
             "id": "SC-BAS-001",
-            "title": "A Superconductor Expels a Magnetic Field",
+            "title": "Magnetic Field Penetration",
             "difficulty": 100,
             "type": "numerical",
 
-            "statement": "A superconducting sample is cooled below its critical temperature in an applied magnetic field of 80 mT. Once the sample enters the Meissner state, the magnetic field inside the bulk of the superconductor is approximately zero. What percentage of the applied magnetic field remains inside the bulk? Enter only the numerical value.",
+            "statement": "A semi-infinite superconductor occupies the region $x>0$. A magnetic field of $B_0 = 20\\,\\mathrm{mT}$ is applied at its surface. The field inside the superconductor follows the London penetration profile $$B(x)=B_0 e^{-x/\\lambda_L},$$ where $\\lambda_L = 50\\,\\mathrm{nm}$. At what depth $x$ is the magnetic field reduced to $1\\%$ of its surface value?",
 
-            "answer": 0,
-            "tolerance": 0.01,
-            "unit": "%",
+            "options": [
+                "$50\\,\\mathrm{nm}$",
+                "$100\\,\\mathrm{nm}$",
+                "$150\\,\\mathrm{nm}$",
+                "$230\\,\\mathrm{nm}$"
+            ],
 
-            "solution": "In the Meissner state, a superconductor expels magnetic flux from its bulk. Therefore the magnetic field inside the bulk is approximately B_inside = 0. The percentage remaining is (B_inside / B_applied) × 100 = 0%."
-        },
+            "answer": 3,
 
-        {
-            "id": "SC-BAS-002",
-            "title": "Finding the Critical Temperature",
-            "difficulty": 200,
-            "type": "numerical",
-
-            "statement": "A superconducting material has a critical temperature of 9.2 K. The sample is initially at 4.2 K and is slowly warmed. At what temperature, in kelvin, does the material cease to be superconducting? Enter the temperature to one decimal place.",
-
-            "answer": 9.2,
-            "tolerance": 0.05,
-            "unit": "K",
-
-            "solution": "The critical temperature Tc is the temperature above which the material no longer remains superconducting. Therefore the transition occurs at Tc = 9.2 K."
-        },
-
-        {
-            "id": "SC-BAS-003",
-            "title": "When Does the Meissner State Break Down?",
-            "difficulty": 300,
-            "type": "numerical",
-
-            "statement": "A type-I superconductor has a thermodynamic critical field of 25 mT at a particular temperature. The external magnetic field is increased slowly from zero. At what applied magnetic field, in mT, does the material leave the Meissner state?",
-
-            "answer": 25,
-            "tolerance": 0.05,
-            "unit": "mT",
-
-            "solution": "For a type-I superconductor, the Meissner state persists while the applied field is below the thermodynamic critical field Hc. When the applied field reaches Hc, superconductivity is destroyed. Hence the transition occurs at 25 mT."
-        },
-
-        {
-            "id": "SC-BAS-004",
-            "title": "Quantization of Magnetic Flux",
-            "difficulty": 400,
-            "type": "numerical",
-
-            "statement": "A superconducting loop traps exactly 7 flux quanta. The superconducting flux quantum is Φ0 = 2.068 × 10^-15 Wb. Calculate the total magnetic flux trapped in the loop. Give your answer in units of 10^-15 Wb.",
-
-            "answer": 14.476,
-            "tolerance": 0.001,
-            "unit": "10^-15 Wb",
-
-            "solution": "Magnetic flux in a superconducting loop is quantized in integer multiples of the flux quantum: Φ = nΦ0. Here n = 7 and Φ0 = 2.068 × 10^-15 Wb. Therefore Φ = 7 × 2.068 = 14.476 × 10^-15 Wb."
-        },
-
-        {
-            "id": "SC-BAS-005",
-            "title": "Measuring the London Penetration Depth",
-            "difficulty": 500,
-            "type": "numerical",
-
-            "statement": "The magnetic field inside a superconductor decreases exponentially from its surface according to B(x) = B0 exp(-x/λ), where λ is the London penetration depth. At a distance of 40 nm from the surface, the magnetic field has decreased to 36.8% of its surface value. Calculate the London penetration depth λ in nm.",
-
-            "answer": 40,
-            "tolerance": 0.1,
-            "unit": "nm",
-
-            "solution": "We have B(x)/B0 = exp(-x/λ). The field has fallen to 36.8%, so exp(-x/λ) ≈ 0.368 ≈ exp(-1). Therefore x/λ = 1, giving λ = x = 40 nm."
+            "solution": "We require $$B(x)=0.01B_0.$$ Using $$B(x)=B_0e^{-x/\\lambda_L},$$ we obtain $$0.01=e^{-x/\\lambda_L}.$$ Taking the natural logarithm, $$\\ln(0.01)=-\\frac{x}{\\lambda_L}.$$ Therefore, $$x=-\\lambda_L\\ln(0.01).$$ Substituting $\\lambda_L=50\\,\\mathrm{nm}$, $$x=-50\\ln(0.01)\\approx 50\\times4.605\\approx230\\,\\mathrm{nm}.$$ Hence the correct answer is $230\\,\\mathrm{nm}$."
         }
 
     ]

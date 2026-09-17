@@ -6,61 +6,121 @@
         {
             "id": "BCS-001",
             "title": "Why Do Electrons Form Cooper Pairs?",
-            "difficulty": 100
+            "difficulty": 100,
+            "type": "numerical",
+            "statement": "The superconducting energy gap is Delta = 1.5 meV. Calculate the pair-breaking energy 2Delta in meV.",
+            "answer": 3,
+            "tolerance": 0.01,
+            "unit": "meV",
+            "solution": "A Cooper pair must supply twice the gap energy, so 2Delta = 2(1.5) = 3 meV."
         },
 
         {
             "id": "BCS-002",
             "title": "The Effective Electron–Electron Attraction",
-            "difficulty": 200
+            "difficulty": 200,
+            "type": "numerical",
+            "statement": "Two electrons exchange a phonon with energy 8 meV. If the effective attraction is 25% of this energy, what is the attraction energy in meV?",
+            "answer": 2,
+            "tolerance": 0.01,
+            "unit": "meV",
+            "solution": "The attraction energy is 0.25 x 8 meV = 2 meV."
         },
 
         {
             "id": "BCS-003",
             "title": "The Superconducting Energy Gap",
-            "difficulty": 300
+            "difficulty": 300,
+            "type": "numerical",
+            "statement": "At zero temperature, a BCS superconductor has critical temperature Tc = 10 K. Using Delta(0) = 1.764 kB Tc and kB = 0.08617 meV/K, calculate Delta(0) in meV.",
+            "answer": 1.52,
+            "tolerance": 0.02,
+            "unit": "meV",
+            "solution": "Delta(0) = 1.764 x 0.08617 x 10 meV = 1.52 meV."
         },
 
         {
             "id": "BCS-004",
             "title": "The Density of States Near the Gap",
-            "difficulty": 400
+            "difficulty": 400,
+            "type": "numerical",
+            "statement": "For a normal-state density of states N0 = 4 states/eV, the BCS density of states at E = 2Delta is N(E) = N0 E/sqrt(E^2 - Delta^2). Calculate N(E) in states/eV.",
+            "answer": 4.619,
+            "tolerance": 0.01,
+            "unit": "states/eV",
+            "solution": "Set Delta = 1 and E = 2: N(E) = 4(2)/sqrt(4 - 1) = 4.619 states/eV."
         },
 
         {
             "id": "BCS-005",
             "title": "Constructing the BCS Ground State",
-            "difficulty": 500
+            "difficulty": 500,
+            "type": "numerical",
+            "statement": "For one momentum state, the BCS coherence factors satisfy u^2 + v^2 = 1. If v^2 = 0.36, calculate u.",
+            "answer": 0.8,
+            "tolerance": 0.01,
+            "unit": "",
+            "solution": "u^2 = 1 - 0.36 = 0.64, so u = 0.8."
         },
 
         {
             "id": "BCS-006",
             "title": "The BCS Gap Equation",
-            "difficulty": 600
+            "difficulty": 600,
+            "type": "numerical",
+            "statement": "In a simplified gap equation, Delta = 2 hbar omegaD exp(-1/(N0V)). If hbar omegaD = 10 meV and N0V = 0.5, calculate Delta in meV.",
+            "answer": 2.707,
+            "tolerance": 0.02,
+            "unit": "meV",
+            "solution": "Delta = 20 exp(-2) meV = 2.707 meV."
         },
 
         {
             "id": "BCS-007",
             "title": "Calculating the Critical Temperature",
-            "difficulty": 700
+            "difficulty": 700,
+            "type": "numerical",
+            "statement": "A superconductor has zero-temperature gap Delta(0) = 2.0 meV. Using Delta(0) = 1.764 kB Tc with kB = 0.08617 meV/K, calculate Tc in kelvin.",
+            "answer": 13.16,
+            "tolerance": 0.05,
+            "unit": "K",
+            "solution": "Tc = 2.0/(1.764 x 0.08617) K = 13.16 K."
         },
 
         {
             "id": "BCS-008",
             "title": "The BCS Coherence Length",
-            "difficulty": 800
+            "difficulty": 800,
+            "type": "numerical",
+            "statement": "The BCS coherence length is xi0 = hbar vF/(pi Delta). If hbar vF = 1.0 x 10^-28 J m and Delta = 2.0 meV = 3.204 x 10^-22 J, calculate xi0 in nm.",
+            "answer": 99.3,
+            "tolerance": 0.5,
+            "unit": "nm",
+            "solution": "xi0 = 1.0 x 10^-28/(pi x 3.204 x 10^-22) m = 99.3 nm."
         },
 
         {
             "id": "BCS-009",
             "title": "The Isotope Effect",
-            "difficulty": 900
+            "difficulty": 900,
+            "type": "numerical",
+            "statement": "The isotope effect predicts Tc proportional to M^(-1/2). If Tc = 12 K for isotope mass M = 100, calculate Tc for M = 144 in kelvin.",
+            "answer": 10,
+            "tolerance": 0.05,
+            "unit": "K",
+            "solution": "Tc2/Tc1 = sqrt(M1/M2) = sqrt(100/144) = 5/6, so Tc2 = 10 K."
         },
 
         {
             "id": "BCS-010",
             "title": "BCS Theory Challenge",
-            "difficulty": 1000
+            "difficulty": 1000,
+            "type": "numerical",
+            "statement": "A BCS superconductor has Tc = 20 K. Using the weak-coupling ratio 2Delta/(kB Tc) = 3.528 and kB = 0.08617 meV/K, calculate Delta in meV.",
+            "answer": 3.04,
+            "tolerance": 0.03,
+            "unit": "meV",
+            "solution": "Delta = (3.528/2)(0.08617)(20) meV = 3.04 meV."
         }
 
     ]

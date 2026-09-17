@@ -6,61 +6,121 @@
         {
             "id": "GL-001",
             "title": "The Superconducting Order Parameter",
-            "difficulty": 100
+            "difficulty": 100,
+            "type": "numerical",
+            "statement": "The magnitude squared of the Ginzburg-Landau order parameter is |psi|^2 = 0.64 in arbitrary units. What is the magnitude |psi|? Enter the numerical value.",
+            "answer": 0.8,
+            "tolerance": 0.01,
+            "unit": "arbitrary units",
+            "solution": "The magnitude is |psi| = sqrt(0.64) = 0.8."
         },
 
         {
             "id": "GL-002",
             "title": "Constructing the GL Free Energy",
-            "difficulty": 200
+            "difficulty": 200,
+            "type": "numerical",
+            "statement": "For a uniform superconductor, the GL free-energy density is f = alpha|psi|^2 + beta|psi|^4/2. If alpha = -2 J/m^3 and |psi|^2 = 1, with beta = 4 J/m^3, calculate f in J/m^3.",
+            "answer": 0,
+            "tolerance": 0.01,
+            "unit": "J/m^3",
+            "solution": "Substituting the values gives f = (-2)(1) + (4)(1)^2/2 = 0 J/m^3."
         },
 
         {
             "id": "GL-003",
             "title": "Finding the Equilibrium Order Parameter",
-            "difficulty": 300
+            "difficulty": 300,
+            "type": "numerical",
+            "statement": "Below the transition temperature, alpha = -3 and beta = 12 in consistent units. Using |psi|^2 = -alpha/beta, calculate |psi|^2.",
+            "answer": 0.25,
+            "tolerance": 0.01,
+            "unit": "arbitrary units",
+            "solution": "The equilibrium value is |psi|^2 = -(-3)/12 = 0.25."
         },
 
         {
             "id": "GL-004",
             "title": "The Coherence Length",
-            "difficulty": 400
+            "difficulty": 400,
+            "type": "numerical",
+            "statement": "The GL coherence length is xi = sqrt(hbar^2/(2m|alpha|)). If hbar^2/(2m) = 2.0 x 10^-14 J m^2 and |alpha| = 8.0 x 10^-3 J/m^3, calculate xi in nm.",
+            "answer": 5000,
+            "tolerance": 10,
+            "unit": "nm",
+            "solution": "xi = sqrt((2.0 x 10^-14)/(8.0 x 10^-3)) m = 5.0 x 10^-6 m = 5000 nm."
         },
 
         {
             "id": "GL-005",
             "title": "The London Penetration Depth from GL Theory",
-            "difficulty": 500
+            "difficulty": 500,
+            "type": "numerical",
+            "statement": "A GL calculation gives a penetration depth lambda = 120 nm and coherence length xi = 30 nm. Calculate the GL parameter kappa = lambda/xi.",
+            "answer": 4,
+            "tolerance": 0.01,
+            "unit": "",
+            "solution": "kappa = lambda/xi = 120/30 = 4."
         },
 
         {
             "id": "GL-006",
             "title": "Calculating the GL Parameter",
-            "difficulty": 600
+            "difficulty": 600,
+            "type": "numerical",
+            "statement": "A type-II superconductor has coherence length xi = 10 nm and penetration depth lambda = 25 nm. Calculate kappa = lambda/xi.",
+            "answer": 2.5,
+            "tolerance": 0.01,
+            "unit": "",
+            "solution": "kappa = 25/10 = 2.5."
         },
 
         {
             "id": "GL-007",
             "title": "Critical Fields from GL Theory",
-            "difficulty": 700
+            "difficulty": 700,
+            "type": "numerical",
+            "statement": "For a type-II superconductor, the upper critical field is Bc2 = Phi0/(2 pi xi^2). Using Phi0 = 2.068 x 10^-15 Wb and xi = 10 nm, calculate Bc2 in tesla.",
+            "answer": 3.29,
+            "tolerance": 0.02,
+            "unit": "T",
+            "solution": "Bc2 = 2.068 x 10^-15/(2 pi (10 x 10^-9)^2) = 3.29 T."
         },
 
         {
             "id": "GL-008",
             "title": "The Energy of a Superconducting Vortex",
-            "difficulty": 800
+            "difficulty": 800,
+            "type": "numerical",
+            "statement": "The approximate vortex energy per unit length is E = (Phi0^2/(4 pi mu0 lambda^2)) ln(kappa). Use Phi0 = 2.068 x 10^-15 Wb, mu0 = 4 pi x 10^-7 H/m, lambda = 100 nm, and kappa = 10. Give E in units of 10^-12 J/m.",
+            "answer": 62.4,
+            "tolerance": 1,
+            "unit": "10^-12 J/m",
+            "solution": "Substitution gives E approximately 1.20 x 10^-12 J/m."
         },
 
         {
             "id": "GL-009",
             "title": "The Abrikosov Vortex Lattice",
-            "difficulty": 900
+            "difficulty": 900,
+            "type": "numerical",
+            "statement": "A triangular Abrikosov lattice has vortex density n = 1.0 x 10^14 m^-2. Estimate the intervortex spacing a using a = sqrt(2/(sqrt(3)n)). Give a in nm.",
+            "answer": 107.5,
+            "tolerance": 0.5,
+            "unit": "nm",
+            "solution": "a = sqrt(2/(sqrt(3) x 10^14)) m = 1.075 x 10^-7 m = 107.5 nm."
         },
 
         {
             "id": "GL-010",
             "title": "Ginzburg–Landau Challenge",
-            "difficulty": 1000
+            "difficulty": 1000,
+            "type": "numerical",
+            "statement": "A superconductor has lambda = 150 nm and xi = 50 nm. Using Bc2 = Phi0/(2 pi xi^2), calculate the upper critical field in tesla. Use Phi0 = 2.068 x 10^-15 Wb.",
+            "answer": 0.1316,
+            "tolerance": 0.002,
+            "unit": "T",
+            "solution": "Bc2 = 2.068 x 10^-15/(2 pi (50 x 10^-9)^2) = 0.1316 T."
         }
 
     ]

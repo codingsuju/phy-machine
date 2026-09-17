@@ -146,10 +146,45 @@ body {
 }
 
 
+/* Answer options */
+
+.answer-options {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 0.75rem;
+
+    max-width: 600px;
+
+}
+
+
+.answer-option {
+
+    min-height: 3rem;
+
+    text-align: left;
+
+}
+
+
 /* Result */
 
 .result-box {
 
     max-width: 600px;
+
+}
+
+
+@media (max-width: 576px) {
+
+    .answer-options {
+
+        grid-template-columns: 1fr;
+
+    }
 
 }
