@@ -254,6 +254,7 @@ searchBox.addEventListener(
             );
 
 
+            
         renderProblems(filtered);
 
     }
