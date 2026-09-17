@@ -24,7 +24,6 @@
             "solution": "We require $$B(x)=0.01B_0.$$ Using $$B(x)=B_0e^{-x/\\lambda_L},$$ we obtain $$0.01=e^{-x/\\lambda_L}.$$ Taking the natural logarithm, $$\\ln(0.01)=-\\frac{x}{\\lambda_L}.$$ Therefore, $$x=-\\lambda_L\\ln(0.01).$$ Substituting $\\lambda_L=50\\,\\mathrm{nm}$, $$x=-50\\ln(0.01)\\approx 50\\times4.605\\approx230\\,\\mathrm{nm}.$$ Hence the correct answer is $230\\,\\mathrm{nm}$."
         }
         ,
-
         {
             "id": "SC-BAS-002",
             "title": "Magnetic Field in a Finite Superconducting Film",
